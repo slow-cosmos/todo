@@ -23,4 +23,4 @@
 ***
 
 ### 블로그 / 실행 동영상
-<http://blog.naver.com/inki1030>
+<https://blog.naver.com/inki1030/222068987072>
