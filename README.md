@@ -22,16 +22,73 @@ Android Studio
 
 ### 주요 코드
 
-* ADD 버튼
-<pre><code>{//MainActivity.java
-            add.setOnClickListener(new View.OnClickListener() {
+* ADD 버튼 (액티비티 간 값 전달)
+<pre><code>
+//MainActivity.java
+add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent intent = new Intent(MainActivity.this,SecondActivity.class);
                 startActivityForResult(intent,1);
             }
-        });}</code></pre>
+        });
+</code></pre>
+<pre><code>
+//MainActivity.java
+@Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(requestCode==1){
+            if(resultCode ==RESULT_OK){
+                String todo = data.getStringExtra("Todo");
+                midList.add(todo);
+                adapter.notifyDataSetChanged();
+
+            }
+        }
+    }
+</code></pre>
+<pre><code>
+//SecondActivity.java
+dlgAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent();
+
+                if(dlgChk.isChecked()==true){
+                    intent.putExtra("Todo",date.getMonth()+1+"/"+date.getDayOfMonth()+"  "+title.getText().toString());
+                }else{
+                    intent.putExtra("Todo",title.getText().toString());
+                }
+
+                setResult(RESULT_OK,intent);
+                finish();
+            }
+        });
+</code></pre>
+
+* REMOVE 버튼 (체크된 항목 삭제)
+<pre><code>
+//MainActivity.java
+remove.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                SparseBooleanArray array = list.getCheckedItemPositions();
+                int count = adapter.getCount();
+
+                for(int i = count-1;i>=0;i--){
+                    if(array.get(i)){
+                        midList.remove(i);
+                    }
+                }
+                list.clearChoices();
+                adapter.notifyDataSetChanged();
+            }
+        });
+</code></pre>
+
+***
 
 ### 추가 될 항목
 
