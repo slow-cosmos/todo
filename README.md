@@ -62,7 +62,7 @@ dlgAdd.setOnClickListener(new View.OnClickListener() {
                 setResult(RESULT_OK,intent);
                 finish();
             }
-        });</code></pre>   
+        });</code></pre>    
 
 * REMOVE 버튼 (체크된 항목 삭제)
 <pre><code>//MainActivity.java
