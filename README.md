@@ -31,10 +31,8 @@ add.setOnClickListener(new View.OnClickListener() {
                 Intent intent = new Intent(MainActivity.this,SecondActivity.class);
                 startActivityForResult(intent,1);
             }
-        });
-</code></pre>
-<pre><code>
-//MainActivity.java
+        });</code></pre>
+<pre><code>//MainActivity.java
 @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if(requestCode==1){
@@ -47,8 +45,7 @@ add.setOnClickListener(new View.OnClickListener() {
         }
     }
 </code></pre>
-<pre><code>
-//SecondActivity.java
+<pre><code>//SecondActivity.java
 dlgAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,12 +61,10 @@ dlgAdd.setOnClickListener(new View.OnClickListener() {
                 setResult(RESULT_OK,intent);
                 finish();
             }
-        });
-</code></pre>
+        });</code></pre>   
 
 * REMOVE 버튼 (체크된 항목 삭제)
-<pre><code>
-//MainActivity.java
+<pre><code>//MainActivity.java
 remove.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -84,8 +79,7 @@ remove.setOnClickListener(new View.OnClickListener(){
                 list.clearChoices();
                 adapter.notifyDataSetChanged();
             }
-        });
-</code></pre>
+        });</code></pre>
 
 ***
 
