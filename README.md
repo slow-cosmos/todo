@@ -1,5 +1,6 @@
 # TODO LIST
 2020 - 08 - 23 ~ 2020 - 08 -24
+Android Studio   
 ***
 
 ### 사용 방법
@@ -10,6 +11,27 @@
 
 * 체크된 항목들은 일괄 제거 가능   
 ***
+
+### 구현
+
+* Dialog로 구현하려다 위젯 관리가 어려워 Activity Intent로 ADD 화면 구현
+
+* CheckBox로 구현하려다 배열 구현이 어려워 ListView로 리스트 화면 구현
+
+***
+
+### 주요 코드
+
+* ADD 버튼
+<pre><code>{//MainActivity.java
+            add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this,SecondActivity.class);
+                startActivityForResult(intent,1);
+            }
+        });}</code></pre>
 
 ### 추가 될 항목
 
