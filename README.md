@@ -23,8 +23,7 @@ Android Studio
 ### 주요 코드
 
 * ADD 버튼 (액티비티 간 값 전달)
-<pre><code>
-//MainActivity.java
+<pre><code>//MainActivity.java
 add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
